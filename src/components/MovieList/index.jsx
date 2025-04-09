@@ -13,7 +13,7 @@ export const MovieList = () => {
       method: "get",
       url: "https://api.themoviedb.org/3/discover/movie",
       params: {
-        api_key: "770a8b0b961a26f4432708240155ad1c",
+        api_key: `${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
         language: "pt-BR",
       },
     }).then((response) => {
