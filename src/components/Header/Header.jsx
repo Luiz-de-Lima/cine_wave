@@ -1,10 +1,9 @@
-import React from "react";
 import { FiSearch } from "react-icons/fi";
 
-export const Header = () => {
+export const Header = ({ valorBusca = "", onChangeBusca, onBuscar }) => {
   return (
-    <header className="bg-gray-900 py-5 sticky top-0 z-50 shadow-lg mb-8">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <header className="bg-gray-900 py-5 sticky top-0 z-50 shadow-lg mb-8 w-full">
+      <div className="container mx-auto px-4 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-white">
@@ -18,8 +17,14 @@ export const Header = () => {
               type="text"
               placeholder="Buscar filmes..."
               className="w-full py-2 px-4 pr-10 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={valorBusca}
+              onChange={(e) => onChangeBusca?.(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && onBuscar()}
             />
-            <FiSearch className="absolute right-3 top-0.5 text-gray-400 text-xl" />
+            <FiSearch
+              className="absolute right-3 top-0.5 text-gray-400 text-xl cursor-pointer"
+              onClick={onBuscar}
+            />
           </div>
         </div>
       </div>
