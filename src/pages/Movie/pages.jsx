@@ -41,8 +41,13 @@ const Movie = () => {
         {!carregando && search && result.length > 0 && (
           <MovieSearchResults movie={result} />
         )}
+        {!carregando && search && result.lengt === 0 && (
+          <p>
+            Nenhum resultado encontrado para: <strong>{search}</strong>
+          </p>
+        )}
       </section>
-      <MovieList />
+      {!search && <MovieList />}
     </>
   );
 };
