@@ -31,7 +31,7 @@ const Movie = () => {
         onChangeBusca={setSearch}
         onBuscar={handleBuscar}
       />
-      <section>
+      <section className="`group bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]`">
         {carregando && <p>Carregando...</p>}
         {!carregando && search && result.length > 0 && (
           <MovieSearchResults movie={result} />

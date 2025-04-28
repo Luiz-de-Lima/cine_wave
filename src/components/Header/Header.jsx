@@ -1,6 +1,9 @@
 import { FiSearch } from "react-icons/fi";
 
 export const Header = ({ valorBusca = "", onChangeBusca, onBuscar }) => {
+  const handleChangeBusca = (e) => {
+    onChangeBusca(e.target.value);
+  };
   return (
     <header className="bg-gray-900 py-5 sticky top-0 z-50 shadow-lg mb-8 w-full">
       <div className="container mx-auto px-4 w-full">
@@ -16,9 +19,9 @@ export const Header = ({ valorBusca = "", onChangeBusca, onBuscar }) => {
             <input
               type="text"
               placeholder="Buscar filmes..."
-              className="w-full py-2 px-4 pr-10 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full py-10 px-4 pr-10 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 "
               value={valorBusca}
-              onChange={(e) => onChangeBusca?.(e.target.value)}
+              onChange={handleChangeBusca}
               onKeyDown={(e) => e.key === "Enter" && onBuscar()}
             />
             <FiSearch
