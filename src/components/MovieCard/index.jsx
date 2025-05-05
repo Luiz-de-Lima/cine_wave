@@ -9,9 +9,9 @@ export const MovieCard = ({ movie, className = "" }) => {
       >
         <div className="relative aspect-[2/3] overflow-hidden">
           <img
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}.jpg`}
+            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
             alt={movie.title}
-            className="w-full h-full"
+            className="w-full h-auto object-cover"
           />
 
           <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -21,8 +21,8 @@ export const MovieCard = ({ movie, className = "" }) => {
           </div>
         </div>
 
-        <div className="p-4">
-          <div className="flex justify-between items-start mb-2">
+        <div className="flex flex-col items-center">
+          <div className="flex justify-between items-start">
             <h3 className="text-white font-semibold truncate">{movie.title}</h3>
             <button className="text-gray-400 hover:text-yellow-400">
               <FaRegBookmark size={18} />

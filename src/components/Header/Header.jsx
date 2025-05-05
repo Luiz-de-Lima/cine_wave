@@ -5,17 +5,18 @@ export const Header = ({ valorBusca = "", onChangeBusca, onBuscar }) => {
     onChangeBusca(e.target.value);
   };
   return (
-    <header className="bg-gray-900 py-5 sticky top-0 z-50 shadow-lg mb-8 w-full">
-      <div className="container mx-auto px-4 w-full">
+    // <header className="bg-gray-900  py-5 sticky top-0 z-50 shadow-lg">
+    <header className="bg-gray-900 py-5 rounded">
+      <div className="container mx-auto sm:w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
-          <div className="flex items-center">
+          <div className="flex">
             <h1 className="text-2xl font-bold text-white">
               <span className="text-blue-400">CINE</span>
               <span className="text-white"> WAVE</span>
             </h1>
           </div>
 
-          <div className="relative w-full md:w-64 lg:w-96">
+          <div className="relative w-full md:w-64 pb-8 lg:w-96 sm:">
             <input
               type="text"
               placeholder="Buscar filmes..."
